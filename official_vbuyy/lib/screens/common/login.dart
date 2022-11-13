@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:official_vbuyy/screens/client/register.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -31,7 +33,7 @@ class _LoginState extends State<Login> {
                   child: Image.asset('assets/images/login.png'),
                 ),
                 Container(
-                  margin: EdgeInsets.all(15),
+                  margin: EdgeInsets.fromLTRB(15, 5, 0, 0),
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Login',
@@ -120,11 +122,12 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       // Social Media Buttons
                       Container(
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               alignment: Alignment.center,
@@ -133,7 +136,7 @@ class _LoginState extends State<Login> {
                               child: Icon(Icons.facebook_outlined),
                             ),
                             SizedBox(
-                              width: 20,
+                              width: 40,
                             ),
                             Container(
                               alignment: Alignment.center,
@@ -143,7 +146,35 @@ class _LoginState extends State<Login> {
                             ),
                           ],
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                  text: 'Don\'t have an account? ',
+                                  style: GoogleFonts.poppins()),
+                              TextSpan(
+                                  text: ' Create',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.bold,
+                                      color: HexColor('#0125FC')),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () => {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => Register(),
+                                            ),
+                                          ),
+                                        }),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:official_vbuyy/screens/common/login.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -25,21 +27,58 @@ class _RegisterState extends State<Register> {
               children: [
                 Container(
                   alignment: Alignment.topCenter,
-                  margin: EdgeInsets.all(20),
+                  margin: EdgeInsets.all(10),
                   height: 200,
                   width: 200,
-                  child: Image.asset('assets/images/login.png'),
+                  child: Image.asset('assets/images/signup.png'),
                 ),
                 Container(
                   margin: EdgeInsets.all(15),
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Login',
+                    'Sign Up',
                     style: GoogleFonts.poppins(
                         fontSize: 26,
                         fontWeight: FontWeight.w700,
                         color: HexColor('#000')),
                   ),
+                ),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.all(10),
+                        color: HexColor('#F5F6F9'),
+                        child: Icon(Icons.facebook_outlined),
+                      ),
+                      SizedBox(
+                        width: 40,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.all(10),
+                        color: HexColor('#F5F6F9'),
+                        child: Icon(Icons.mail_outline),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  child: Text(
+                    'Or, register with email...',
+                    style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: HexColor('#A9B9CD')),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 Container(
                   child: Column(
@@ -80,6 +119,29 @@ class _RegisterState extends State<Register> {
                           decoration: InputDecoration(
                             hintText: 'Password',
                             prefixIcon: Icon(Icons.lock_rounded),
+                            suffixIcon: Icon(Icons.visibility_off_rounded),
+                            prefixIconColor: HexColor('#A9B9CD'),
+                            hintStyle: GoogleFonts.poppins(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 5, 0, 0),
+                        alignment: Alignment.topLeft,
+                        decoration: BoxDecoration(
+                            border: Border(
+                          bottom: BorderSide(
+                            color: HexColor('#B7C6D9'),
+                            width: 0.1,
+                          ),
+                        )),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Confirm Password',
+                            prefixIcon: Icon(Icons.lock_rounded),
                             prefixIconColor: HexColor('#A9B9CD'),
                             hintStyle: GoogleFonts.poppins(),
                           ),
@@ -91,7 +153,7 @@ class _RegisterState extends State<Register> {
                         child: ElevatedButton(
                           onPressed: () {},
                           child: Text(
-                            'Login',
+                            'Sign Up',
                             style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700,
@@ -108,42 +170,32 @@ class _RegisterState extends State<Register> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       Container(
-                        child: Text(
-                          'Or, login with',
-                          style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: HexColor('#A9B9CD')),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      // Social Media Buttons
-                      Container(
-                        child: Row(
+                          child: Text.rich(
+                        TextSpan(
                           children: [
-                            Container(
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.all(10),
-                              color: HexColor('#F5F6F9'),
-                              child: Icon(Icons.facebook_outlined),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.all(10),
-                              color: HexColor('#F5F6F9'),
-                              child: Icon(Icons.mail_outline),
-                            ),
+                            TextSpan(
+                                text: 'Already have an account? ',
+                                style: GoogleFonts.poppins()),
+                            TextSpan(
+                                text: 'Sign In',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.bold,
+                                    color: HexColor('#0125FC')),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () => {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Login(),
+                                          ),
+                                        ),
+                                      }),
                           ],
                         ),
-                      )
+                      ))
                     ],
                   ),
                 ),
