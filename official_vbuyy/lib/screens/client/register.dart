@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -14,6 +15,8 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  var email = TextEditingController();
+  var password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -94,6 +97,7 @@ class _RegisterState extends State<Register> {
                           ),
                         )),
                         child: TextField(
+                          controller: email,
                           decoration: InputDecoration(
                             hintText: 'Email Id',
                             prefixIcon: Icon(Icons.email_rounded),
@@ -116,6 +120,8 @@ class _RegisterState extends State<Register> {
                           ),
                         )),
                         child: TextField(
+                          controller: password,
+                          obscureText: true,
                           decoration: InputDecoration(
                             hintText: 'Password',
                             prefixIcon: Icon(Icons.lock_rounded),
@@ -139,6 +145,7 @@ class _RegisterState extends State<Register> {
                           ),
                         )),
                         child: TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                             hintText: 'Confirm Password',
                             prefixIcon: Icon(Icons.lock_rounded),
@@ -186,12 +193,20 @@ class _RegisterState extends State<Register> {
                                     color: HexColor('#0125FC')),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () => {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => Login(),
-                                          ),
-                                        ),
+                                        FirebaseAuth.instance
+                                            .createUserWithEmailAndPassword(
+                                                email: email.text,
+                                                password: password.text)
+                                            .then((value) => {
+                                                  print("User Created"),
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              Login()))
+                                                })
+                                            .onError((error, stackTrace) =>
+                                                {print("Error")})
                                       }),
                           ],
                         ),
