@@ -21,6 +21,7 @@ class _RegisterState extends State<Register> {
     var _password = TextEditingController();
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Container(
@@ -180,37 +181,39 @@ class _RegisterState extends State<Register> {
                         height: 10,
                       ),
                       Container(
-                          child: Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                                text: 'Already have an account? ',
-                                style: GoogleFonts.poppins()),
-                            TextSpan(
-                                text: 'Sign In',
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.bold,
-                                    color: HexColor('#0125FC')),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () => {
-                                        FirebaseAuth.instance
-                                            .createUserWithEmailAndPassword(
-                                                email: _email.text,
-                                                password: _password.text)
-                                            .then((value) {
-                                          print("User Created");
-                                          Navigator.push(
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                  text: 'Already have an account? ',
+                                  style: GoogleFonts.poppins()),
+                              TextSpan(
+                                  text: 'Sign In',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.bold,
+                                      color: HexColor('#0125FC')),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () async => {
+                                          await FirebaseAuth.instance
+                                              .createUserWithEmailAndPassword(
+                                                  email: _email.text,
+                                                  password: _password.text)
+                                              .then((value) {
+                                            print("User Created");
+                                            Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      Login()));
-                                        }).onError((error, stackTrace) {
-                                          print("Error");
-                                        })
-                                      }),
-                          ],
+                                                builder: (context) => Login(),
+                                              ),
+                                            );
+                                          }).onError((error, stackTrace) {
+                                            print("Error");
+                                          })
+                                        }),
+                            ],
+                          ),
                         ),
-                      ))
+                      )
                     ],
                   ),
                 ),
