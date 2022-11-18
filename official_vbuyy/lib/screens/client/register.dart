@@ -15,10 +15,10 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  var email = TextEditingController();
-  var password = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var _email = TextEditingController();
+    var _password = TextEditingController();
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -97,7 +97,7 @@ class _RegisterState extends State<Register> {
                           ),
                         )),
                         child: TextField(
-                          controller: email,
+                          controller: _email,
                           decoration: InputDecoration(
                             hintText: 'Email Id',
                             prefixIcon: Icon(Icons.email_rounded),
@@ -120,7 +120,7 @@ class _RegisterState extends State<Register> {
                           ),
                         )),
                         child: TextField(
-                          controller: password,
+                          controller: _password,
                           obscureText: true,
                           decoration: InputDecoration(
                             hintText: 'Password',
@@ -195,18 +195,18 @@ class _RegisterState extends State<Register> {
                                   ..onTap = () => {
                                         FirebaseAuth.instance
                                             .createUserWithEmailAndPassword(
-                                                email: email.text,
-                                                password: password.text)
-                                            .then((value) => {
-                                                  print("User Created"),
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              Login()))
-                                                })
-                                            .onError((error, stackTrace) =>
-                                                {print("Error")})
+                                                email: _email.text,
+                                                password: _password.text)
+                                            .then((value) {
+                                          print("User Created");
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Login()));
+                                        }).onError((error, stackTrace) {
+                                          print("Error");
+                                        })
                                       }),
                           ],
                         ),
