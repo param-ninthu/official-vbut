@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:official_vbuyy/screens/common/login.dart';
@@ -159,7 +157,25 @@ class _RegisterState extends State<Register> {
                         margin: EdgeInsets.fromLTRB(15, 30, 0, 0),
                         alignment: Alignment.center,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            FirebaseAuth.instance
+                                .createUserWithEmailAndPassword(
+                                    email: _email.text,
+                                    password: _password.text)
+                                .then((value) {
+                              print("User Created");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Login(),
+                                ),
+                              );
+                            }).onError(
+                              (error, stackTrace) {
+                                print("Error");
+                              },
+                            );
+                          },
                           child: Text(
                             'Sign Up',
                             style: GoogleFonts.poppins(
@@ -193,23 +209,13 @@ class _RegisterState extends State<Register> {
                                       fontWeight: FontWeight.bold,
                                       color: HexColor('#0125FC')),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () async => {
-                                          await FirebaseAuth.instance
-                                              .createUserWithEmailAndPassword(
-                                                  email: _email.text,
-                                                  password: _password.text)
-                                              .then((value) {
-                                            print("User Created");
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => Login(),
-                                              ),
-                                            );
-                                          }).onError((error, stackTrace) {
-                                            print("Error");
-                                          })
-                                        }),
+                                    ..onTap = () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Login()),
+                                      );
+                                    }),
                             ],
                           ),
                         ),
