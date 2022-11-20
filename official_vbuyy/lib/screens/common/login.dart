@@ -1,10 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:official_vbuyy/screens/client/register.dart';
+import 'package:official_vbuyy/screens/common/home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -14,6 +14,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  var _email = TextEditingController();
+  var _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -57,6 +59,7 @@ class _LoginState extends State<Login> {
                           ),
                         )),
                         child: TextField(
+                          controller: _email,
                           decoration: InputDecoration(
                             hintText: 'Email Id',
                             prefixIcon: Icon(Icons.email_rounded),
@@ -79,6 +82,8 @@ class _LoginState extends State<Login> {
                           ),
                         )),
                         child: TextField(
+                          controller: _password,
+                          obscureText: true,
                           decoration: InputDecoration(
                             hintText: 'Password',
                             prefixIcon: Icon(Icons.lock_rounded),
@@ -91,7 +96,21 @@ class _LoginState extends State<Login> {
                         margin: EdgeInsets.fromLTRB(15, 30, 0, 0),
                         alignment: Alignment.center,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            FirebaseAuth.instance
+                                .signInWithEmailAndPassword(
+                                    email: _email.text,
+                                    password: _password.text)
+                                .then((value) {
+                              print('Logged In');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Home(),
+                                ),
+                              );
+                            });
+                          },
                           child: Text(
                             'Login',
                             style: GoogleFonts.poppins(
