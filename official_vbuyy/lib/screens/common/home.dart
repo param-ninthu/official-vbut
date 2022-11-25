@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
             child: Text('Home'),
           ),
         ),
-        bottomNavigationBar: __bottomNav(),
+        bottomNavigationBar: bottomNav(),
       ),
     );
   }
