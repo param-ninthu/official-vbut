@@ -37,21 +37,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 GNav bottomNav() {
   return GNav(
-    rippleColor: Colors.grey,
-    hoverColor: Colors.grey.shade600,
-    haptic: true,
-    tabBorderRadius: 15,
-    tabActiveBorder: Border.all(color: Colors.black, width: 1),
-    tabBorder: Border.all(color: Colors.grey, width: 1),
-    tabShadow: [BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)],
-    curve: Curves.easeOutExpo,
-    duration: Duration(milliseconds: 700),
     gap: 8,
-    color: Colors.grey[800],
-    activeColor: Color.fromARGB(255, 39, 80, 176),
-    iconSize: 24,
-    tabBackgroundColor: Color.fromARGB(255, 46, 39, 176).withOpacity(0.1),
-    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
     tabs: [
       GButton(
         icon: Icons.home,

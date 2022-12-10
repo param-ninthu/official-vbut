@@ -39,10 +39,7 @@ class _LoginState extends State<Login> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Login',
-                    style: GoogleFonts.poppins(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w700,
-                        color: HexColor('#000')),
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                 ),
                 Container(
@@ -64,7 +61,7 @@ class _LoginState extends State<Login> {
                             hintText: 'Email Id',
                             prefixIcon: Icon(Icons.email_rounded),
                             prefixIconColor: HexColor('#A9B9CD'),
-                            hintStyle: GoogleFonts.poppins(),
+                            hintStyle: GoogleFonts.play(),
                           ),
                         ),
                       ),
@@ -88,7 +85,7 @@ class _LoginState extends State<Login> {
                             hintText: 'Password',
                             prefixIcon: Icon(Icons.lock_rounded),
                             prefixIconColor: HexColor('#A9B9CD'),
-                            hintStyle: GoogleFonts.poppins(),
+                            hintStyle: GoogleFonts.play(),
                           ),
                         ),
                       ),
@@ -113,7 +110,7 @@ class _LoginState extends State<Login> {
                           },
                           child: Text(
                             'Login',
-                            style: GoogleFonts.poppins(
+                            style: GoogleFonts.play(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700,
                                 color: HexColor('#ffffff')),
@@ -134,7 +131,7 @@ class _LoginState extends State<Login> {
                       Container(
                         child: Text(
                           'Or, login with',
-                          style: GoogleFonts.poppins(
+                          style: GoogleFonts.play(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: HexColor('#A9B9CD')),
@@ -175,10 +172,10 @@ class _LoginState extends State<Login> {
                             children: [
                               TextSpan(
                                   text: 'Don\'t have an account? ',
-                                  style: GoogleFonts.poppins()),
+                                  style: GoogleFonts.play()),
                               TextSpan(
                                   text: ' Create',
-                                  style: GoogleFonts.poppins(
+                                  style: GoogleFonts.play(
                                       fontWeight: FontWeight.bold,
                                       color: HexColor('#0125FC')),
                                   recognizer: TapGestureRecognizer()

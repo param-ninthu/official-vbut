@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Sign Up',
-                    style: GoogleFonts.poppins(
+                    style: GoogleFonts.play(
                         fontSize: 26,
                         fontWeight: FontWeight.w700,
                         color: HexColor('#000')),
@@ -101,7 +101,7 @@ class _RegisterState extends State<Register> {
                             hintText: 'Email Id',
                             prefixIcon: Icon(Icons.email_rounded),
                             prefixIconColor: HexColor('#A9B9CD'),
-                            hintStyle: GoogleFonts.poppins(),
+                            hintStyle: GoogleFonts.play(),
                           ),
                         ),
                       ),
@@ -126,7 +126,7 @@ class _RegisterState extends State<Register> {
                             prefixIcon: Icon(Icons.lock_rounded),
                             suffixIcon: Icon(Icons.visibility_off_rounded),
                             prefixIconColor: HexColor('#A9B9CD'),
-                            hintStyle: GoogleFonts.poppins(),
+                            hintStyle: GoogleFonts.play(),
                           ),
                         ),
                       ),
@@ -149,7 +149,7 @@ class _RegisterState extends State<Register> {
                             hintText: 'Confirm Password',
                             prefixIcon: Icon(Icons.lock_rounded),
                             prefixIconColor: HexColor('#A9B9CD'),
-                            hintStyle: GoogleFonts.poppins(),
+                            hintStyle: GoogleFonts.play(),
                           ),
                         ),
                       ),
@@ -178,7 +178,7 @@ class _RegisterState extends State<Register> {
                           },
                           child: Text(
                             'Sign Up',
-                            style: GoogleFonts.poppins(
+                            style: GoogleFonts.play(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700,
                                 color: HexColor('#ffffff')),
@@ -202,10 +202,10 @@ class _RegisterState extends State<Register> {
                             children: [
                               TextSpan(
                                   text: 'Already have an account? ',
-                                  style: GoogleFonts.poppins()),
+                                  style: GoogleFonts.play()),
                               TextSpan(
                                   text: 'Sign In',
-                                  style: GoogleFonts.poppins(
+                                  style: GoogleFonts.play(
                                       fontWeight: FontWeight.bold,
                                       color: HexColor('#0125FC')),
                                   recognizer: TapGestureRecognizer()
