@@ -49,12 +49,13 @@ class _LoginState extends State<Login> {
                         margin: EdgeInsets.fromLTRB(15, 5, 0, 0),
                         alignment: Alignment.topLeft,
                         decoration: BoxDecoration(
-                            border: Border(
-                          bottom: BorderSide(
-                            color: HexColor('#B7C6D9'),
-                            width: 0.1,
+                          border: Border(
+                            bottom: BorderSide(
+                              color: HexColor('#B7C6D9'),
+                              width: 0.1,
+                            ),
                           ),
-                        )),
+                        ),
                         child: TextField(
                           controller: _email,
                           decoration: InputDecoration(
@@ -72,12 +73,13 @@ class _LoginState extends State<Login> {
                         margin: EdgeInsets.fromLTRB(15, 5, 0, 0),
                         alignment: Alignment.topLeft,
                         decoration: BoxDecoration(
-                            border: Border(
-                          bottom: BorderSide(
-                            color: HexColor('#B7C6D9'),
-                            width: 0.1,
+                          border: Border(
+                            bottom: BorderSide(
+                              color: HexColor('#B7C6D9'),
+                              width: 0.1,
+                            ),
                           ),
-                        )),
+                        ),
                         child: TextField(
                           controller: _password,
                           obscureText: true,
@@ -110,10 +112,7 @@ class _LoginState extends State<Login> {
                           },
                           child: Text(
                             'Login',
-                            style: GoogleFonts.play(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700,
-                                color: HexColor('#ffffff')),
+                            style: Theme.of(context).textTheme.headline4,
                           ),
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size.fromHeight(50),

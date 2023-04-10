@@ -38,7 +38,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 GNav bottomNav() {
   return GNav(
     gap: 8,
-    tabs: [
+    tabs: const [
       GButton(
         icon: Icons.home,
         text: 'Home',
