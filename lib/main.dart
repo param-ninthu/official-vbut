@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:official_vbuyy/resources/colors.dart';
 import 'package:official_vbuyy/screens/common/login.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: HexColor('#00FFAB'),
         hintColor: HexColor('#E5E5E5'),
+        errorColor: HexColor('#E74646'),
         fontFamily: GoogleFonts.play().fontFamily,
         textTheme: const TextTheme(
           // ignore: deprecated_member_use
@@ -36,6 +38,7 @@ class MyApp extends StatelessWidget {
           headline4: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w700,
+            color: Colors.white,
           ),
           headline5: TextStyle(
             fontSize: 14,

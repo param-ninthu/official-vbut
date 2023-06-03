@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import '../screens/client/home.dart';
+
 // BottomNavigationBar bottomNav() {
 //   return BottomNavigationBar(
 //     items: <BottomNavigationBarItem>[
@@ -35,13 +37,17 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 //   );
 // }
 
-GNav bottomNav() {
+GNav bottomNav(BuildContext context) {
   return GNav(
     gap: 8,
-    tabs: const [
+    tabs: [
       GButton(
         icon: Icons.home,
         text: 'Home',
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Home()));
+        },
       ),
       GButton(
         icon: Icons.search,

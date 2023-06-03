@@ -3,8 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:official_vbuyy/controllers/loginController.dart';
+import 'package:official_vbuyy/resources/colors.dart';
 import 'package:official_vbuyy/screens/client/register.dart';
-import 'package:official_vbuyy/screens/common/home.dart';
+import 'package:official_vbuyy/screens/client/home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -96,19 +98,7 @@ class _LoginState extends State<Login> {
                         alignment: Alignment.center,
                         child: ElevatedButton(
                           onPressed: () {
-                            FirebaseAuth.instance
-                                .signInWithEmailAndPassword(
-                                    email: _email.text,
-                                    password: _password.text)
-                                .then((value) {
-                              print('Logged In');
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Home(),
-                                ),
-                              );
-                            });
+                            loginClient(_email.text, _password.text, context);
                           },
                           child: Text(
                             'Login',
@@ -116,7 +106,7 @@ class _LoginState extends State<Login> {
                           ),
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size.fromHeight(50),
-                            primary: HexColor('#0125FC'),
+                            primary: secondaryColor,
                             padding: EdgeInsets.fromLTRB(50, 15, 50, 15),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
