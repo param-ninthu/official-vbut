@@ -14,13 +14,9 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        title: Text('Search'),
-      ),
       body: Center(
         child: Text('Search'),
       ),
-      bottomNavigationBar: bottomNav(context),
     ));
   }
 }
