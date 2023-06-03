@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:official_vbuyy/controllers/registerController.dart';
 import 'package:official_vbuyy/screens/common/login.dart';
 
 class Register extends StatefulWidget {
@@ -17,6 +18,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     var _email = TextEditingController();
     var _password = TextEditingController();
+    var _confirmPassword = TextEditingController();
     return SafeArea(
       child: Scaffold(
         extendBodyBehindAppBar: true,
@@ -138,6 +140,7 @@ class _RegisterState extends State<Register> {
                           ),
                         )),
                         child: TextField(
+                          controller: _confirmPassword,
                           obscureText: true,
                           decoration: InputDecoration(
                             hintText: 'Confirm Password',
@@ -152,23 +155,15 @@ class _RegisterState extends State<Register> {
                         alignment: Alignment.center,
                         child: ElevatedButton(
                           onPressed: () {
-                            FirebaseAuth.instance
-                                .createUserWithEmailAndPassword(
-                                    email: _email.text,
-                                    password: _password.text)
-                                .then((value) {
-                              print("User Created");
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Login(),
-                                ),
-                              );
-                            }).onError(
-                              (error, stackTrace) {
-                                print("Error");
-                              },
-                            );
+                            if (_password.text == _confirmPassword.text) {
+                              registerClient(
+                                  _email.text, _password.text, context);
+                            } else {
+                              print('Passwords do not match');
+                            }
+                            _confirmPassword.clear();
+                            _email.clear();
+                            _password.clear();
                           },
                           child: Text(
                             'Sign Up',
