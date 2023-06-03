@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:official_vbuyy/layouts/field_layout.dart';
 
 import '../screens/client/home.dart';
 import '../screens/common/login.dart';
@@ -23,7 +24,7 @@ void loginClient(String email, String password, BuildContext context) {
               btnOkOnPress: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Home()),
+                  MaterialPageRoute(builder: (context) => Layout()),
                 );
               },
             )..show()

@@ -41,6 +41,8 @@ dependencies:
   firebase_auth: ^4.1.2
   google_nav_bar: ^5.0.6
   awesome_dialog: ^3.0.2
+  get: ^4.6.5
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:

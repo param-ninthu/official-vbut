@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:official_vbuyy/resources/colors.dart';
 import 'package:official_vbuyy/screens/common/login.dart';
@@ -14,7 +15,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       theme: ThemeData(
         primaryColor: HexColor('#00FFAB'),
         hintColor: HexColor('#E5E5E5'),

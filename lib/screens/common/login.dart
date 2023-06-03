@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:official_vbuyy/controllers/loginController.dart';
+import 'package:official_vbuyy/controllers/login_controller.dart';
 import 'package:official_vbuyy/resources/colors.dart';
 import 'package:official_vbuyy/screens/client/register.dart';
 import 'package:official_vbuyy/screens/client/home.dart';
@@ -120,10 +120,7 @@ class _LoginState extends State<Login> {
                       Container(
                         child: Text(
                           'Or, login with',
-                          style: GoogleFonts.play(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: HexColor('#A9B9CD')),
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ),
                       SizedBox(
@@ -166,7 +163,7 @@ class _LoginState extends State<Login> {
                                   text: ' Create',
                                   style: GoogleFonts.play(
                                       fontWeight: FontWeight.bold,
-                                      color: HexColor('#0125FC')),
+                                      color: secondaryColor),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () => {
                                           Navigator.push(

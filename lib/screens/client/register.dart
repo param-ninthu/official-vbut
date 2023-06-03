@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:official_vbuyy/controllers/registerController.dart';
+import 'package:official_vbuyy/controllers/register_controller.dart';
 import 'package:official_vbuyy/screens/common/login.dart';
 
 class Register extends StatefulWidget {
