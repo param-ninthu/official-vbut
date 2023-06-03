@@ -19,12 +19,13 @@ class MyApp extends StatelessWidget {
         hintColor: HexColor('#E5E5E5'),
         fontFamily: GoogleFonts.play().fontFamily,
         textTheme: const TextTheme(
+          // ignore: deprecated_member_use
           headline1: TextStyle(
             fontSize: 72,
             fontWeight: FontWeight.w700,
           ),
           headline2: TextStyle(
-            fontSize: 36,
+            fontSize: 30,
             fontWeight: FontWeight.w700,
             color: Color.fromRGBO(20, 195, 142, 1),
           ),
@@ -45,9 +46,9 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
           bodyText1: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-          ),
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              color: Color.fromRGBO(183, 198, 217, 1)),
           bodyText2: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w400,

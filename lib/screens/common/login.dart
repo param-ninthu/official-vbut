@@ -38,7 +38,7 @@ class _LoginState extends State<Login> {
                   margin: EdgeInsets.fromLTRB(15, 5, 0, 0),
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Login',
+                    'Sign In',
                     style: Theme.of(context).textTheme.headline2,
                   ),
                 ),

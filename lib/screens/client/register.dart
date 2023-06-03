@@ -39,10 +39,7 @@ class _RegisterState extends State<Register> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Sign Up',
-                    style: GoogleFonts.play(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w700,
-                        color: HexColor('#000')),
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                 ),
                 Container(
@@ -73,10 +70,7 @@ class _RegisterState extends State<Register> {
                 Container(
                   child: Text(
                     'Or, register with email...',
-                    style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: HexColor('#A9B9CD')),
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ),
                 SizedBox(
