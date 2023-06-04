@@ -3,9 +3,6 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:official_vbuyy/layouts/field_layout.dart';
 
-import '../screens/client/home.dart';
-import '../screens/common/login.dart';
-
 // BuildContext context;
 
 void loginClient(String email, String password, BuildContext context) {

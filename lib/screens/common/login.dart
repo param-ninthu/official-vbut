@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,7 +5,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:official_vbuyy/controllers/login_controller.dart';
 import 'package:official_vbuyy/resources/colors.dart';
 import 'package:official_vbuyy/screens/client/register.dart';
-import 'package:official_vbuyy/screens/client/home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -160,19 +158,18 @@ class _LoginState extends State<Login> {
                                   text: 'Don\'t have an account? ',
                                   style: GoogleFonts.play()),
                               TextSpan(
-                                  text: ' Create',
-                                  style: GoogleFonts.play(
-                                      fontWeight: FontWeight.bold,
-                                      color: secondaryColor),
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () => {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Register(),
-                                            ),
-                                          ),
-                                        }),
+                                text: ' Create',
+                                style: GoogleFonts.play(
+                                    fontWeight: FontWeight.bold,
+                                    color: secondaryColor),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => Register(),
+                                        ),
+                                      ),
+                              ),
                             ],
                           ),
                         ),

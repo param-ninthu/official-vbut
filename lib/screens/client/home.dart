@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:official_vbuyy/layouts/bottom_nav.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
