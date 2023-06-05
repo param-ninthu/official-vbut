@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:official_vbuyy/resources/colors.dart';
 
 import '../feature/bottom_navigation_state.dart';
 

@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Container(
           height: MediaQuery.of(context).size.height,
-          color: HexColor("#F2F2F2"),
+          color: HexColor("#fff"),
           width: MediaQuery.of(context).size.width,
           child: Center(child: Text("Home")),
         ),

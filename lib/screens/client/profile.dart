@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<SearchScreen> createState() => _SearchScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,7 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
             height: MediaQuery.of(context).size.height,
             color: HexColor("#fff"),
             width: MediaQuery.of(context).size.width,
-            child: Center(child: Text("Search")),
+            child: Center(child: Text("Profile")),
           ),
         ),
       ),
