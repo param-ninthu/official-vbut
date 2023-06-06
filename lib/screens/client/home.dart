@@ -11,10 +11,10 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height * 0.85,
           color: HexColor("#fff"),
           width: MediaQuery.of(context).size.width,
-          child: Center(child: Text("Home")),
+          child: Expanded(child: Text("Home")),
         ),
       ),
     );
